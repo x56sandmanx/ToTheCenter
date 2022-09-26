@@ -17,4 +17,12 @@ public class ObstacleMovement : MonoBehaviour
         Vector3 movement = new Vector3(0, speed * Time.deltaTime, 0);
         transform.Translate(movement);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Top")
+        {
+            Destroy(gameObject);
+        }
+    }
 }
