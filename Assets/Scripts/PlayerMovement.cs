@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float speed = 5.0f;
     [SerializeField] private float jumpSpeed = 10.0f;
-    [SerializeField] private GameObject pauseScreen;
+    [SerializeField] private GameManager gameManager;
     private bool isGrounded;
     private bool isPaused = false;
     private Rigidbody2D rb;
@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
         {
             isPaused = !isPaused;
             Time.timeScale = isPaused ? 0 : 1;
-            pauseScreen.SetActive(isPaused);
+            gameManager.PauseScreen(isPaused);
         }
     }
 
