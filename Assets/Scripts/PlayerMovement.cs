@@ -22,9 +22,6 @@ public class PlayerMovement : MonoBehaviour
 
         transform.Translate(movement*speed*Time.deltaTime);
 
-
-        Debug.Log(isGrounded);
-
         if (Input.GetButtonDown("Jump") && isGrounded == true)
         {
             rb.AddForce(Vector2.up * jumpSpeed, ForceMode2D.Impulse);
@@ -34,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Ground")
+        if (collision.gameObject.tag == "Ground" || collision.gameObject.tag == "Obstacle")
             isGrounded = true;
     }
 }
