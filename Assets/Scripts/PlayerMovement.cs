@@ -6,7 +6,9 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float speed = 5.0f;
     [SerializeField] private float jumpSpeed = 10.0f;
+    [SerializeField] private GameObject pauseScreen;
     private bool isGrounded;
+    private bool isPaused = false;
     private Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
@@ -26,6 +28,13 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.AddForce(Vector2.up * jumpSpeed, ForceMode2D.Impulse);
             isGrounded = false;
+        }
+
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            isPaused = !isPaused;
+            Time.timeScale = isPaused ? 0 : 1;
+            pauseScreen.SetActive(isPaused);
         }
     }
 
