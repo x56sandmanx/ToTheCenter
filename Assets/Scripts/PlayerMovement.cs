@@ -4,21 +4,37 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float speed;
+    [SerializeField] private float speed = 5.0f;
+    [SerializeField] private float jumpSpeed = 10.0f;
+    private bool isGrounded;
+    private Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
         float inputX = Input.GetAxis("Horizontal");
-        float inputY = Input.GetAxis("Vertical");
-
-        Vector3 movement = new Vector3(inputX, inputY, 0);
+        Vector3 movement = new Vector3(inputX, 0, 0);
 
         transform.Translate(movement*speed*Time.deltaTime);
+
+
+        Debug.Log(isGrounded);
+
+        if (Input.GetButtonDown("Jump") && isGrounded == true)
+        {
+            rb.AddForce(Vector2.up * jumpSpeed, ForceMode2D.Impulse);
+            isGrounded = false;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Ground")
+            isGrounded = true;
     }
 }
