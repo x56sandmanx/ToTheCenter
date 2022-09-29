@@ -33,6 +33,10 @@ public class GameManager : MonoBehaviour
             levelText.text = "Level 4";
             StartCoroutine(LevelPopUp());
         }
+        if(Score.score == 400)
+        {
+            ChangeScene("WinScene");
+        }
     }
 
     public void PauseScreen(bool isPaused)
