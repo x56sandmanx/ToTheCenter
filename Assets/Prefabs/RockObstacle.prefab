@@ -443,6 +443,7 @@ GameObject:
   - component: {fileID: 2904275095125833593}
   - component: {fileID: 1694635275476314871}
   - component: {fileID: -5150129200234477953}
+  - component: {fileID: 2416466485455733896}
   m_Layer: 0
   m_Name: RockObstacle
   m_TagString: Rock
@@ -505,3 +506,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.051034, y: 1.7474022}
   m_EdgeRadius: 0
+--- !u!114 &2416466485455733896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7782699599426602017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fe9a96334001f14897ac9a5ad127935, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

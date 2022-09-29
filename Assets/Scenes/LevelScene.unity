@@ -709,7 +709,7 @@ GameObject:
   - component: {fileID: 463596767}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1424,7 +1424,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstaclePrefab: {fileID: 7782699599426602017, guid: 265470af3bc824fd3bc822edaa163903, type: 3}
-  spawnTime: 4
+  spawnTime: 2
   playerTransform: {fileID: 463596765}
 --- !u!4 &761115647
 Transform:
