@@ -14,7 +14,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Slider healthSlider;
     [SerializeField] private Animator playerAnimator;
     [SerializeField] private TextMeshProUGUI scoreText;
-    private int score;
     private bool isGrounded;
     private bool isPaused = false;
     private Rigidbody2D rb;
@@ -23,8 +22,8 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         currPlayerHealth = maxPlayerHealth;
-        score = 0;
-        scoreText.text = score.ToString();
+        Score.score = 0;
+        scoreText.text = Score.score.ToString();
     }
 
     // Update is called once per frame
@@ -65,8 +64,8 @@ public class PlayerMovement : MonoBehaviour
         }
         if (collision.gameObject.tag == "Obstacle")
         {
-            score += 10;
-            scoreText.text = score.ToString();
+            Score.score += 10;
+            scoreText.text = Score.score.ToString();
         }
     }
 
