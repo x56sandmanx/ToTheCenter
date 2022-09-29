@@ -7,7 +7,7 @@ public class ObstacleSpawner : MonoBehaviour
     [SerializeField] private GameObject obstaclePrefab;
     [SerializeField] private float spawnTime;
     [SerializeField] private Transform playerTransform;
-    private float timer;
+    public float timer;
     // Start is called before the first frame update
     void Start()
     {

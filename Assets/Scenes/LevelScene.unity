@@ -681,6 +681,7 @@ MonoBehaviour:
   obstaclePrefab: {fileID: 2443661610908833009, guid: de9806d6a6992d948af16043bb70339c, type: 3}
   spawnTime: 2
   playerTransform: {fileID: 463596765}
+  timer: 0
 --- !u!4 &374830950
 Transform:
   m_ObjectHideFlags: 0
@@ -1572,8 +1573,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstaclePrefab: {fileID: 7782699599426602017, guid: 265470af3bc824fd3bc822edaa163903, type: 3}
-  spawnTime: 2
+  spawnTime: 4
   playerTransform: {fileID: 463596765}
+  timer: 0
 --- !u!4 &761115647
 Transform:
   m_ObjectHideFlags: 0
@@ -1689,6 +1691,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseScreen: {fileID: 1858737815}
   levelText: {fileID: 523310753}
+  obstacleSpeed: {fileID: 374830949}
+  rockSpawner: {fileID: 761115646}
 --- !u!4 &1032192226
 Transform:
   m_ObjectHideFlags: 0

@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject pauseScreen;
     [SerializeField] private TextMeshProUGUI levelText;
+    [SerializeField] private ObstacleSpawner obstacleSpeed;
+    [SerializeField] private ObstacleSpawner rockSpawner;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,16 +23,22 @@ public class GameManager : MonoBehaviour
         if(Score.score == 100)
         {
             levelText.text = "Level 2";
+            obstacleSpeed.timer = 1.5f;
+            rockSpawner.timer = 3.0f;
             StartCoroutine(LevelPopUp());
         }
         if (Score.score == 200)
         {
             levelText.text = "Level 3";
+            obstacleSpeed.timer = 1.0f;
+            rockSpawner.timer = 2.0f;
             StartCoroutine(LevelPopUp());
         }
         if (Score.score == 300)
         {
             levelText.text = "Level 4";
+            obstacleSpeed.timer = 0.5f;
+            rockSpawner.timer = 1.0f;
             StartCoroutine(LevelPopUp());
         }
         if(Score.score == 400)
