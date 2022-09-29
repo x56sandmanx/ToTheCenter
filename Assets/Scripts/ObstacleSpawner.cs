@@ -6,6 +6,7 @@ public class ObstacleSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject obstaclePrefab;
     [SerializeField] private float spawnTime;
+    [SerializeField] private Transform playerTransform;
     private float timer;
     // Start is called before the first frame update
     void Start()
@@ -22,8 +23,8 @@ public class ObstacleSpawner : MonoBehaviour
         }
         else
         {
-            float randX = Random.Range(-10, 10);
-            Vector3 randomPos = new Vector3(randX,transform.position.y,0);
+            float randX = Random.Range(-5, 5);
+            Vector3 randomPos = new Vector3(playerTransform.position.x+randX,transform.position.y,0);
             Instantiate(obstaclePrefab, randomPos, transform.rotation);
             timer = 0;
         }

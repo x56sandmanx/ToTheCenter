@@ -1,12 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float speed = 5.0f;
     [SerializeField] private float jumpSpeed = 10.0f;
     [SerializeField] private GameManager gameManager;
+    [SerializeField] private int maxPlayerHealth = 100;
+    [SerializeField] private int currPlayerHealth;
+    [SerializeField] private Slider healthSlider;
+    [SerializeField] private Animator playerAnimator;
+    [SerializeField] private TextMeshProUGUI scoreText;
+    private int score;
     private bool isGrounded;
     private bool isPaused = false;
     private Rigidbody2D rb;
@@ -14,6 +22,9 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        currPlayerHealth = maxPlayerHealth;
+        score = 0;
+        scoreText.text = score.ToString();
     }
 
     // Update is called once per frame
@@ -36,17 +47,41 @@ public class PlayerMovement : MonoBehaviour
             Time.timeScale = isPaused ? 0 : 1;
             gameManager.PauseScreen(isPaused);
         }
+
+        if(currPlayerHealth == 0)
+        {
+            gameManager.ChangeScene("DeathScene");
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Ground" || collision.gameObject.tag == "Obstacle")
+        if(collision.gameObject.tag == "Ground")
             isGrounded = true;
+        if(collision.gameObject.tag == "Rock")
+        {
+            currPlayerHealth -= 10;
+            StartCoroutine(DecreaseHealth());
+        }
+        if (collision.gameObject.tag == "Obstacle")
+        {
+            score += 10;
+            scoreText.text = score.ToString();
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Obstacle")
             isGrounded = false;
+    }
+
+    IEnumerator DecreaseHealth()
+    {
+        while(healthSlider.value >= currPlayerHealth)
+        {
+            healthSlider.value -= 25 * Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
     }
 }
