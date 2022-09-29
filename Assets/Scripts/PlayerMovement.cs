@@ -22,7 +22,6 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         currPlayerHealth = maxPlayerHealth;
-        Score.score = 0;
         scoreText.text = Score.score.ToString();
     }
 
