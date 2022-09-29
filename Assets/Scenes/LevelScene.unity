@@ -678,7 +678,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstaclePrefab: {fileID: 2443661610908833009, guid: de9806d6a6992d948af16043bb70339c, type: 3}
-  spawnTime: 1.5
+  spawnTime: 2
   playerTransform: {fileID: 463596765}
 --- !u!4 &374830950
 Transform:
@@ -688,7 +688,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 374830948}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -6, z: -0.10203143}
+  m_LocalPosition: {x: 0, y: -5.66, z: -0.10203143}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1425,7 +1425,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstaclePrefab: {fileID: 7782699599426602017, guid: 265470af3bc824fd3bc822edaa163903, type: 3}
   spawnTime: 4
-  playerTransform: {fileID: 0}
+  playerTransform: {fileID: 463596765}
 --- !u!4 &761115647
 Transform:
   m_ObjectHideFlags: 0
@@ -1451,6 +1451,10 @@ PrefabInstance:
     - target: {fileID: 2443661610908833009, guid: de9806d6a6992d948af16043bb70339c, type: 3}
       propertyPath: m_Name
       value: StartingPlatform
+      objectReference: {fileID: 0}
+    - target: {fileID: 2443661610908833009, guid: de9806d6a6992d948af16043bb70339c, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 2443661610908833011, guid: de9806d6a6992d948af16043bb70339c, type: 3}
       propertyPath: m_RootOrder
