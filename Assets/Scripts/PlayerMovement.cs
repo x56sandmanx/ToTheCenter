@@ -19,6 +19,9 @@ public class PlayerMovement : MonoBehaviour
     private bool isGrounded = true;
     private bool isPaused = false;
     private Rigidbody2D rb;
+    public AudioSource[] sounds;
+    public AudioSource jump;
+    public AudioSource rock;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +32,9 @@ public class PlayerMovement : MonoBehaviour
         healthSlider.value = currPlayerHealth;
         scoreText.text = GameData.score.ToString();
         Time.timeScale = 1;
+        sounds = GetComponents<AudioSource>();
+        jump = sounds[0];
+        rock = sounds[1];
     }
 
     // Update is called once per frame
@@ -43,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.AddForce(Vector2.up * jumpSpeed, ForceMode2D.Impulse);
             isGrounded = false;
-            GetComponent<AudioSource>().Play();
+            jump.Play();
         }
         if(inputX >= 0)
         {
@@ -77,6 +83,8 @@ public class PlayerMovement : MonoBehaviour
         {
             currPlayerHealth -= 10;
             StartCoroutine(DecreaseHealth());
+            GetComponent<AudioSource>().Play();
+            rock.Play();
         }
         if (collision.gameObject.tag == "Obstacle")
         {
