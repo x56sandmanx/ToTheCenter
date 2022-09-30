@@ -1993,7 +1993,6 @@ GameObject:
   - component: {fileID: 1731163949}
   - component: {fileID: 1731163948}
   - component: {fileID: 1731163947}
-  - component: {fileID: 1731163946}
   m_Layer: 0
   m_Name: Camera Colliders
   m_TagString: Ground
@@ -2001,32 +2000,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!61 &1731163946
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1731163945}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.14737701, y: 5.556096}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 20.512657, y: 0.9115734}
-  m_EdgeRadius: 0
 --- !u!61 &1731163947
 BoxCollider2D:
   m_ObjectHideFlags: 0

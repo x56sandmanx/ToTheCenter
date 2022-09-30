@@ -10,19 +10,21 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpSpeed = 10.0f;
     [SerializeField] private GameManager gameManager;
     [SerializeField] private int maxPlayerHealth = 100;
-    [SerializeField] private int currPlayerHealth;
+    [SerializeField] private float currPlayerHealth;
     [SerializeField] private Slider healthSlider;
     [SerializeField] private Animator playerAnimator;
     [SerializeField] private TextMeshProUGUI scoreText;
-    private bool isGrounded;
+    private bool isGrounded = true;
     private bool isPaused = false;
     private Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        currPlayerHealth = maxPlayerHealth;
-        scoreText.text = Score.score.ToString();
+        currPlayerHealth = GameData.health;
+        healthSlider.value = currPlayerHealth;
+        scoreText.text = GameData.score.ToString();
+        Time.timeScale = 1;
     }
 
     // Update is called once per frame
@@ -55,7 +57,7 @@ public class PlayerMovement : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Ground")
-            isGrounded = true;
+            currPlayerHealth = 0;
         if(collision.gameObject.tag == "Rock")
         {
             currPlayerHealth -= 10;
@@ -63,8 +65,30 @@ public class PlayerMovement : MonoBehaviour
         }
         if (collision.gameObject.tag == "Obstacle")
         {
-            Score.score += 10;
-            scoreText.text = Score.score.ToString();
+            isGrounded = true;
+            GameData.score += 10;
+            scoreText.text = GameData.score.ToString();
+            CheckLevel(GameData.score);
+        }
+    }
+
+    public void CheckLevel(int score)
+    {
+        if (score == 100)
+        {
+            gameManager.SetLevel("Level 2");
+        }
+        if (score == 300)
+        {
+            gameManager.SetLevel("Level 3");
+        }
+        if (score == 600)
+        {
+            gameManager.SetLevel("Level 4");
+        }
+        if (score == 1200)
+        {
+            gameManager.SetLevel("Win");
         }
     }
 
@@ -81,5 +105,6 @@ public class PlayerMovement : MonoBehaviour
             healthSlider.value -= 25 * Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
+        GameData.health = healthSlider.value;
     }
 }
