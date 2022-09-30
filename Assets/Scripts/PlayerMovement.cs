@@ -22,6 +22,10 @@ public class PlayerMovement : MonoBehaviour
     public AudioSource[] sounds;
     public AudioSource jump;
     public AudioSource rock;
+    public AudioSource death;
+    public AudioSource land;
+    public AudioSource levelUp;
+    public AudioSource win;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +39,10 @@ public class PlayerMovement : MonoBehaviour
         sounds = GetComponents<AudioSource>();
         jump = sounds[0];
         rock = sounds[1];
+        death = sounds[2];
+        land = sounds[3];
+        levelUp = sounds[4];
+        win = sounds[5];
     }
 
     // Update is called once per frame
@@ -71,6 +79,7 @@ public class PlayerMovement : MonoBehaviour
 
         if(currPlayerHealth == 0)
         {
+			death.Play();
             gameManager.ChangeScene("DeathScene");
         }
     }
@@ -78,7 +87,10 @@ public class PlayerMovement : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Ground")
+        {
+			death.Play();
             currPlayerHealth = 0;
+		}
         if(collision.gameObject.tag == "Rock")
         {
             currPlayerHealth -= 10;
@@ -91,7 +103,9 @@ public class PlayerMovement : MonoBehaviour
             isGrounded = true;
             GameData.score += 10;
             scoreText.text = GameData.score.ToString();
+            land.Play();
             CheckLevel(GameData.score);
+            
 
             
         }
@@ -102,18 +116,23 @@ public class PlayerMovement : MonoBehaviour
         if (score == 100)
         {
             gameManager.SetLevel("Level 2");
+            levelUp.Play();
+            
         }
         if (score == 300)
         {
             gameManager.SetLevel("Level 3");
+            levelUp.Play();
         }
         if (score == 600)
         {
             gameManager.SetLevel("Level 4");
+            levelUp.Play();
         }
         if (score == 1200)
         {
             gameManager.SetLevel("Win");
+            win.Play();
         }
     }
 
