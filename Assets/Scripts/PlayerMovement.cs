@@ -43,6 +43,7 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.AddForce(Vector2.up * jumpSpeed, ForceMode2D.Impulse);
             isGrounded = false;
+            GetComponent<AudioSource>().Play();
         }
         if(inputX >= 0)
         {
