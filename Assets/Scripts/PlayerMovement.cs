@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Slider healthSlider;
     [SerializeField] private Animator playerAnimator;
     [SerializeField] private TextMeshProUGUI scoreText;
+    Animator anim;
+    SpriteRenderer sRender;
     private bool isGrounded = true;
     private bool isPaused = false;
     private Rigidbody2D rb;
@@ -21,6 +23,8 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponentInChildren<Animator>();
+        sRender = GetComponentInChildren<SpriteRenderer>();
         currPlayerHealth = GameData.health;
         healthSlider.value = currPlayerHealth;
         scoreText.text = GameData.score.ToString();
@@ -40,7 +44,17 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(Vector2.up * jumpSpeed, ForceMode2D.Impulse);
             isGrounded = false;
         }
-
+        if(inputX >= 0)
+        {
+            anim.ResetTrigger("StartFalling");
+            anim.SetTrigger("StartIdle");
+        }
+        else
+        {
+            anim.ResetTrigger("StartFalling");
+            anim.SetTrigger("StartIdle");
+        }
+        
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             isPaused = !isPaused;
@@ -69,6 +83,8 @@ public class PlayerMovement : MonoBehaviour
             GameData.score += 10;
             scoreText.text = GameData.score.ToString();
             CheckLevel(GameData.score);
+
+            
         }
     }
 

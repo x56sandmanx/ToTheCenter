@@ -682,6 +682,7 @@ MonoBehaviour:
   spawnTime: 2
   playerTransform: {fileID: 463596765}
   timer: 0
+  speed: 0
 --- !u!4 &374830950
 Transform:
   m_ObjectHideFlags: 0
@@ -709,6 +710,7 @@ GameObject:
   - component: {fileID: 463596763}
   - component: {fileID: 463596766}
   - component: {fileID: 463596767}
+  - component: {fileID: 463596768}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -799,6 +801,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &463596768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463596762}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1de64c50a3f844e3a3143e3c26df8ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &470103056
 GameObject:
   m_ObjectHideFlags: 0
@@ -1576,6 +1590,7 @@ MonoBehaviour:
   spawnTime: 4
   playerTransform: {fileID: 463596765}
   timer: 0
+  speed: 0
 --- !u!4 &761115647
 Transform:
   m_ObjectHideFlags: 0
