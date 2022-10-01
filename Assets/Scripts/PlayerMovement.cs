@@ -20,12 +20,12 @@ public class PlayerMovement : MonoBehaviour
     private bool isPaused = false;
     private Rigidbody2D rb;
     public AudioSource[] sounds;
-    public AudioSource jump;
-    public AudioSource rock;
-    public AudioSource death;
-    public AudioSource land;
-    public AudioSource levelUp;
-    public AudioSource win;
+    private AudioSource jump;
+    private AudioSource rock;
+    private AudioSource death;
+    private AudioSource land;
+    private AudioSource levelUp;
+    private AudioSource win;
     // Start is called before the first frame update
     void Start()
     {
@@ -98,9 +98,13 @@ public class PlayerMovement : MonoBehaviour
         }
         if (collision.gameObject.tag == "Obstacle")
         {
+            if (collision.gameObject.GetComponent<ObstacleMovement>().isTouched == false)
+            {
+                GameData.score += 10;
+                scoreText.text = GameData.score.ToString();
+                collision.gameObject.GetComponent<ObstacleMovement>().isTouched = true;
+            }
             isGrounded = true;
-            GameData.score += 10;
-            scoreText.text = GameData.score.ToString();
             land.Play();
             CheckLevel(GameData.score);
         }

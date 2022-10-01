@@ -5,6 +5,7 @@ using UnityEngine;
 public class ObstacleMovement : MonoBehaviour
 {
     [SerializeField] public float speed = 2.0f;
+    public bool isTouched = false;
     // Start is called before the first frame update
     void Start()
     {
