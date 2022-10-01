@@ -59,15 +59,13 @@ public class PlayerMovement : MonoBehaviour
             isGrounded = false;
             jump.Play();
         }
-        if(inputX >= 0)
+        if(inputX != 0)
         {
-            anim.ResetTrigger("StartFalling");
-            anim.SetTrigger("StartIdle");
+            anim.Play("Falling Player");
         }
         else
         {
-            anim.ResetTrigger("StartFalling");
-            anim.SetTrigger("StartIdle");
+            anim.Play("IdlePlayer");
         }
         
         if(Input.GetKeyDown(KeyCode.Escape))
@@ -105,9 +103,6 @@ public class PlayerMovement : MonoBehaviour
             scoreText.text = GameData.score.ToString();
             land.Play();
             CheckLevel(GameData.score);
-            
-
-            
         }
     }
 
