@@ -60,6 +60,9 @@ public class GameManager : MonoBehaviour
         }
         if(level == "Win")
         {
+			PlayerPrefs.SetInt("score", GameData.score);
+			PlayerPrefs.SetString("level", levelText.text);
+			PlayerPrefs.SetFloat("health", GameData.health);
             ChangeScene("WinScene");
         }
     }
