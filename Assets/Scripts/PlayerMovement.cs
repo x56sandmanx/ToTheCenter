@@ -93,7 +93,6 @@ public class PlayerMovement : MonoBehaviour
         {
             currPlayerHealth -= 10;
             StartCoroutine(DecreaseHealth());
-            GetComponent<AudioSource>().Play();
             rock.Play();
         }
         if (collision.gameObject.tag == "Obstacle")

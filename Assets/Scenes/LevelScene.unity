@@ -745,12 +745,6 @@ MonoBehaviour:
   playerAnimator: {fileID: 558303725}
   scoreText: {fileID: 644500306}
   sounds: []
-  jump: {fileID: 0}
-  rock: {fileID: 0}
-  death: {fileID: 0}
-  land: {fileID: 0}
-  levelUp: {fileID: 0}
-  win: {fileID: 0}
 --- !u!4 &463596765
 Transform:
   m_ObjectHideFlags: 0
@@ -836,7 +830,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 6c52fe180700e403191cf4e1f685c80a, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 5ad1f78de0197437f8ddb0019bee06b9, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
