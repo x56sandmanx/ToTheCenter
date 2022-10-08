@@ -451,17 +451,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '1. Score Points by landing on platforms coming up from the ground.
-
-    2.
-    Avoid Rocks from hitting you as the come up to hit you, or you will lose health!
-
-    3.
-    Pause the game at any time with the Esc key and save and quit for later.
-
-    4.
-    As your score increases, platforms and obstacles will move faster, and beat the
-    game by scoring'
+  m_text: "The Objective of the game is to travel to the center of the Earth!\n\n1.
+    Score Points by landing on platforms coming up from the ground. Platforms dissapear
+    at the top of the screen causing you to fall!\n2. If you hit the bottom of the
+    screen, you will miss all platforms and lose!\n3. Avoid Rocks from hitting you
+    as the come up to hit you, or you will lose health!\n4. As your score increases,
+    platforms and obstacles will move faster, and beat the game by scoring 1200 points!
+    \n5. Pause the game at any time with the Esc key and save and quit for later.\n\nControls:\nJump
+    - Spacebar\nMove - Arrow Keys"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1323,9 +1320,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7509f64c91bd541d092ee322f3db7550, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 9138b62061cf544989ff48fd7f888da0, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.1
+  m_Volume: 0.39
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2029,7 +2026,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5286adffd19a14ea8914373ee10af493, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

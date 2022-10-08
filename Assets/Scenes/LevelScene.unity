@@ -745,12 +745,6 @@ MonoBehaviour:
   playerAnimator: {fileID: 558303725}
   scoreText: {fileID: 644500306}
   sounds: []
-  jump: {fileID: 0}
-  rock: {fileID: 0}
-  death: {fileID: 0}
-  land: {fileID: 0}
-  levelUp: {fileID: 0}
-  win: {fileID: 0}
 --- !u!4 &463596765
 Transform:
   m_ObjectHideFlags: 0
@@ -836,7 +830,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 6c52fe180700e403191cf4e1f685c80a, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 5ad1f78de0197437f8ddb0019bee06b9, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -932,7 +926,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 0433672e5a9e048e19f06abcf36eb85c, type: 3}
+  m_audioClip: {fileID: 8300000, guid: f98e2a0650caa4062861934034d450b0, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.342
   m_Pitch: 1
@@ -1124,9 +1118,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e7d54bd561ddf4bb5881e249f705e86b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 5651d0b8027994430b1e04790c69ccce, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.211
+  m_Volume: 0.55
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1316,9 +1310,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 662d62ec2e71644da98191f461e7050d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a872ace18768a4c748932a14f8a1fc2e, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.707
+  m_Volume: 0.292
   m_Pitch: 1
   Loop: 0
   Mute: 0
